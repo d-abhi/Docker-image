@@ -7,7 +7,6 @@ COPY devops /app
 
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    ENV PIP_BREAK_SYSTEM_PACKAGES=1 && \
     pip install --break-system-packages -r requirements.txt \
     cd devops
 
