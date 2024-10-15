@@ -8,11 +8,12 @@ COPY devops /app
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
     pip install -r requirements.txt && \
+    pip install -r requirements.txt --break-system-package
     cd devops
 
 ENTRYPOINT ["python3"]
 CMD ["manage.py", "runserver", "0.0.0.0:8000"]
-ENV PIP_BREAK_SYSTEM_PACKAGES 1
+
 
 
 
